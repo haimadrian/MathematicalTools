@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/haimadrian/MathematicalTools/math-tools-calc/static/css/main.dcdc15ab.chunk.css",
-    "main.js": "/haimadrian/MathematicalTools/math-tools-calc/static/js/main.60e328da.chunk.js",
-    "main.js.map": "/haimadrian/MathematicalTools/math-tools-calc/static/js/main.60e328da.chunk.js.map",
-    "runtime-main.js": "/haimadrian/MathematicalTools/math-tools-calc/static/js/runtime-main.a7e089e2.js",
-    "runtime-main.js.map": "/haimadrian/MathematicalTools/math-tools-calc/static/js/runtime-main.a7e089e2.js.map",
-    "static/js/2.82718e5a.chunk.js": "/haimadrian/MathematicalTools/math-tools-calc/static/js/2.82718e5a.chunk.js",
-    "static/js/2.82718e5a.chunk.js.map": "/haimadrian/MathematicalTools/math-tools-calc/static/js/2.82718e5a.chunk.js.map",
-    "static/js/3.11950a9e.chunk.js": "/haimadrian/MathematicalTools/math-tools-calc/static/js/3.11950a9e.chunk.js",
-    "static/js/3.11950a9e.chunk.js.map": "/haimadrian/MathematicalTools/math-tools-calc/static/js/3.11950a9e.chunk.js.map",
-    "index.html": "/haimadrian/MathematicalTools/math-tools-calc/index.html",
-    "static/css/main.dcdc15ab.chunk.css.map": "/haimadrian/MathematicalTools/math-tools-calc/static/css/main.dcdc15ab.chunk.css.map",
-    "static/js/2.82718e5a.chunk.js.LICENSE.txt": "/haimadrian/MathematicalTools/math-tools-calc/static/js/2.82718e5a.chunk.js.LICENSE.txt"
+    "main.css": "/math-tools-calc/static/css/main.dcdc15ab.chunk.css",
+    "main.js": "/math-tools-calc/static/js/main.60e328da.chunk.js",
+    "main.js.map": "/math-tools-calc/static/js/main.60e328da.chunk.js.map",
+    "runtime-main.js": "/math-tools-calc/static/js/runtime-main.bbab2a95.js",
+    "runtime-main.js.map": "/math-tools-calc/static/js/runtime-main.bbab2a95.js.map",
+    "static/js/2.82718e5a.chunk.js": "/math-tools-calc/static/js/2.82718e5a.chunk.js",
+    "static/js/2.82718e5a.chunk.js.map": "/math-tools-calc/static/js/2.82718e5a.chunk.js.map",
+    "static/js/3.11950a9e.chunk.js": "/math-tools-calc/static/js/3.11950a9e.chunk.js",
+    "static/js/3.11950a9e.chunk.js.map": "/math-tools-calc/static/js/3.11950a9e.chunk.js.map",
+    "index.html": "/math-tools-calc/index.html",
+    "static/css/main.dcdc15ab.chunk.css.map": "/math-tools-calc/static/css/main.dcdc15ab.chunk.css.map",
+    "static/js/2.82718e5a.chunk.js.LICENSE.txt": "/math-tools-calc/static/js/2.82718e5a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a7e089e2.js",
+    "static/js/runtime-main.bbab2a95.js",
     "static/js/2.82718e5a.chunk.js",
     "static/css/main.dcdc15ab.chunk.css",
     "static/js/main.60e328da.chunk.js"
