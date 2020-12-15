@@ -27,3 +27,4 @@ yarn-error.log*
 .cmd
 .ps1
 .json
+.eslintcache
