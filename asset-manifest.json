@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MathematicalTools/static/css/main.c8a94dcd.chunk.css",
+    "main.css": "/MathematicalTools/static/css/main.67b9211f.chunk.css",
     "main.js": "/MathematicalTools/static/js/main.d20da89b.chunk.js",
     "main.js.map": "/MathematicalTools/static/js/main.d20da89b.chunk.js.map",
     "runtime-main.js": "/MathematicalTools/static/js/runtime-main.f1c8f2dc.js",
@@ -10,13 +10,13 @@
     "static/js/3.ffa086ec.chunk.js": "/MathematicalTools/static/js/3.ffa086ec.chunk.js",
     "static/js/3.ffa086ec.chunk.js.map": "/MathematicalTools/static/js/3.ffa086ec.chunk.js.map",
     "index.html": "/MathematicalTools/index.html",
-    "static/css/main.c8a94dcd.chunk.css.map": "/MathematicalTools/static/css/main.c8a94dcd.chunk.css.map",
+    "static/css/main.67b9211f.chunk.css.map": "/MathematicalTools/static/css/main.67b9211f.chunk.css.map",
     "static/js/2.ffb3e8b6.chunk.js.LICENSE.txt": "/MathematicalTools/static/js/2.ffb3e8b6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f1c8f2dc.js",
     "static/js/2.ffb3e8b6.chunk.js",
-    "static/css/main.c8a94dcd.chunk.css",
+    "static/css/main.67b9211f.chunk.css",
     "static/js/main.d20da89b.chunk.js"
   ]
 }
