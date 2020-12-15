@@ -12,12 +12,10 @@ import './App.css';
 function App() {
     return (
         <div className="App">
-            <label>
-                <header className="App-header">
-                    <img src="./logo192.png" className="App-logo" alt="logo"/>
-                    Math Tools Calculator
-                </header>
-            </label>
+            <div className="App-header">
+                <img src="./logo192.png" className="App-logo" alt="logo"/>
+                <label className='header-title'>Math Tools Calculator</label>
+            </div>
 
             <Router history={history}>
                 <Switch>
