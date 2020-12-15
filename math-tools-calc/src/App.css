@@ -1,5 +1,5 @@
 .App {
-    text-align: left;
+    text-align: right;
     position: absolute;
     font-family: sans-serif;
     background: #282c34;
@@ -12,9 +12,11 @@
     min-height: 100vh;
     pointer-events: none;
     border-radius: 0;
+    background-size: cover;
 }
 
 .App-logo {
+    text-align: left;
     height: 10vmin;
     pointer-events: none;
     margin: 0 20px 0 0;
@@ -22,73 +24,182 @@
 }
 
 .App-header {
+    text-align: left;
     font-size: 36px;
     font-style: oblique;
     font-weight: bold;
     padding-bottom: 5px;
     border-radius: 0;
+    box-sizing: border-box;
+    position: sticky;
+    top:0;
+    width:100%;
+    height: 7%;
+    transition:0.5s;
 }
 
-.react-tabs {
-    display: flex;
-    color: white;
-    background: #1c1d1f;
-    margin: 0;
-    padding: 0;
-    height: 88%;
-    border-radius: 0;
-    pointer-events: auto;
-    box-shadow: 0 0 10px 0 rgba(97, 218, 251, 0.7);
+@media (max-width: 620px ) {
+    .react-tabs {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        background: #1c1d1f;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+        pointer-events: auto;
+        box-shadow: 0 0 10px 0 rgba(97, 218, 251, 0.7);
+    }
+
+    .react-tabs__tab-list {
+        display: flex;
+        flex-direction: row;
+        width: 98%;
+        height: 80px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background: #3c3e43;
+        text-align: center;
+    }
+
+    .react-tabs__tab {
+        list-style: none;
+        padding: 5px 5px;
+        cursor: pointer;
+        color: #bbb;
+    }
+
+    .react-tabs__tab--selected {
+        background: #1c1d1f;
+        border-color: #1c1d1f;
+        border-top: 4px solid #61dafb;
+        color: white;
+    }
+
+    .react-tabs__tab-panel {
+        display: none;
+        background: #1c1d1f;
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .react-tabs__tab-panel--selected {
+        display: block;
+    }
+
+    .execute-button {
+        padding: 5px 0 5px 0;
+        margin: 10px 5px 0 5px;
+        border-radius: 5px;
+        min-width: 120px;
+        text-align: center;
+        opacity: 0.85;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        background: rgb(97, 218, 251);
+        font-size: 18px;
+        font-style: normal;
+        font-variant: full-width;
+        font-weight: 650;
+    }
 }
 
-.react-tabs__tab-list {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: 0;
-    padding: 0;
-    color: white;
-    background: #3c3e43;
-}
+@media (min-width: 620px ) {
+    .react-tabs {
+        display: flex;
+        color: white;
+        background: #1c1d1f;
+        margin: 0;
+        padding: 0;
+        height: 93%;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+        pointer-events: auto;
+        box-shadow: 0 0 10px 0 rgba(97, 218, 251, 0.7);
+    }
 
-.react-tabs__tab {
-    list-style: none;
-    padding: 12px 6px;
-    cursor: pointer;
-    color: #bbb;
-}
+    .react-tabs__tab-list {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background: #3c3e43;
+        text-align: center;
+    }
 
-.react-tabs__tab--selected {
-    background: #1c1d1f;
-    border-color: #1c1d1f;
-    border-left: 4px solid #61dafb;
-    color: white;
-}
+    .react-tabs__tab {
+        list-style: none;
+        padding: 5px 5px;
+        cursor: pointer;
+        color: #bbb;
+    }
 
-.react-tabs__tab-panel {
-    display: none;
-    background: #1c1d1f;
-    margin-left: 10px;
-    height: 100%;
-    width: 100%;
-}
+    .react-tabs__tab--selected {
+        background: #1c1d1f;
+        border-color: #1c1d1f;
+        border-left: 4px solid #61dafb;
+        color: white;
+    }
 
-.react-tabs__tab-panel--selected {
-    display: block;
+    .react-tabs__tab-panel {
+        display: none;
+        background: #1c1d1f;
+        margin-left: 10px;
+        width: 98%;
+        height: 88%;
+        box-sizing: border-box;
+    }
+
+    .react-tabs__tab-panel--selected {
+        display: block;
+    }
+
+    .execute-button {
+        padding: 5px 0 5px 0;
+        margin: 10px 5px 0 5px;
+        border-radius: 5px;
+        min-width: 200px;
+        text-align: center;
+        opacity: 0.85;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        background: rgb(97, 218, 251);
+        font-size: 18px;
+        font-style: normal;
+        font-variant: full-width;
+        font-weight: 650;
+    }
 }
 
 .copyright {
     font-size: calc(2px + 2vmin);
-    vertical-align: bottom;
-    display: inline-block;
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
+    position: sticky;
+    margin-right: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
     font-weight: 200;
+    color: #bbb;
 }
 
 
 .wrapper label {
+    text-align: left;
     padding: 10px 5px 0 5px;
     min-width: 250px;
     display: flex;
@@ -100,6 +211,7 @@
 }
 
 .wrapper .content {
+    text-align: left;
     padding: 5px 5px 0 5px;
     min-width: 250px;
     display: flex;
@@ -118,25 +230,6 @@
     display: flex;
     justify-content: flex-start;
     font-size: 16px;
-    font-style: normal;
-    font-variant: full-width;
-    font-weight: 650;
-}
-
-.execute-button {
-    padding: 5px 0 5px 0;
-    margin: 10px 5px 0 5px;
-    border-radius: 5px;
-    min-width: 200px;
-    text-align: center;
-    opacity: 0.85;
-    cursor: pointer;
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    background: rgb(97, 218, 251);
-    font-size: 18px;
     font-style: normal;
     font-variant: full-width;
     font-weight: 650;

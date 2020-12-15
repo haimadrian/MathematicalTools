@@ -1,5 +1,13 @@
-.gcdlcm-algorithm-panel .wrapper textarea {
-    height: 36.85vh;
+@media (max-width: 620px ) {
+    .gcdlcm-algorithm-panel .wrapper textarea {
+        height: 22vmin;
+    }
+}
+
+@media (min-width: 620px ) {
+    .gcdlcm-algorithm-panel .wrapper textarea {
+        height: 36.85vmin;
+    }
 }
 
 .gcdlcm-algorithm-panel .wrapper select {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import {BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import {Router, Route, Switch } from 'react-router-dom';
 import history from './common/history';
 import EuclideanAlgorithmForm from './view/actions/euclidean-algorithm/index';
 import GcdLcmForm from './view/actions/gcd-lcm-prime-factors/index';
@@ -14,12 +14,12 @@ function App() {
         <div className="App">
             <label>
                 <header className="App-header">
-                    <img src="./deadpool.png" className="App-logo" alt="logo"/>
-                    Mathematical Tools Calculator
+                    <img src="./logo192.png" className="App-logo" alt="logo"/>
+                    Math Tools Calculator
                 </header>
             </label>
 
-            <BrowserRouter history={history}>
+            <Router history={history}>
                 <Switch>
                     <Route exact path='/MathematicalTools/euclideanalgorithm' component={EuclideanAlgorithmForm}/>
                     <Route exact path='/MathematicalTools/gcdlcm' component={GcdLcmForm}/>
@@ -40,31 +40,34 @@ function App() {
                         <Tab>
                             <p>Modular Equations</p>
                         </Tab>
-                        <label className="copyright">© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
                     </TabList>
 
                     <TabPanel>
                         <div className="panel-content">
                             <EuclideanAlgorithmForm/>
+                            <label className="copyright"><br/>© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className="panel-content">
                             <GcdLcmForm/>
+                            <label className="copyright"><br/>© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className="panel-content">
                             <EulerForm/>
+                            <label className="copyright"><br/>© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className="panel-content">
                             <ModularEquationsForm/>
+                            <label className="copyright"><br/>© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
                         </div>
                     </TabPanel>
                 </Tabs>
-            </BrowserRouter>
+            </Router>
 
         </div>
     );

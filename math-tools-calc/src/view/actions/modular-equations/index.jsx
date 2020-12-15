@@ -140,11 +140,11 @@ export default class ModularEquationsForm extends React.Component {
                         {
                             // Dynamic rows, to let user add or remove equations
                             this.state.equations.map((equation, i) =>
-                                <label className="actions">
+                                <label key={'label' + i} className="actions">
                                     <div key={i}>
                                         <input type="text" value={equation||DEFAULT_EQUATION} onChange={this.handleInputChange.bind(this, i)} />
                                     </div>
-                                    <div className="edit-button" id="remove" onClick={this.removeEquation.bind(this, i)}>-</div>
+                                    <div className="edit-button" id={'remove' + i} onClick={this.removeEquation.bind(this, i)}>-</div>
                                     {   // In case there is a message to display, pop it up
                                         i === (this.state.equations.length - 1) ?
                                             <div className="edit-button" id="add" onClick={this.addEquation.bind(this, i)}>+</div> : null

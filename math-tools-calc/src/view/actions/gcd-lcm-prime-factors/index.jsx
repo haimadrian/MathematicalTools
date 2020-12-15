@@ -145,7 +145,7 @@ export default class GcdLcmForm extends React.Component {
                                     value={this.state.algType}
                                     onChange={this.handleInputChange}>
                                 {[GCD_ALG_TYPE, PRIME_FACTORS_ALG_TYPE].map((option) => (
-                                    <option value={option}>{option}</option>
+                                    <option key={option} value={option}>{option}</option>
                                 ))}
                             </select>
                         </label>

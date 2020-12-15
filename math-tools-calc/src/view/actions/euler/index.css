@@ -1,3 +1,11 @@
-.euler-algorithm-panel .wrapper textarea {
-    height: 50vh;
+@media (max-width: 620px ) {
+    .euler-algorithm-panel .wrapper textarea {
+        height: 50.8vmin;
+    }
+}
+
+@media (min-width: 620px ) {
+    .euler-algorithm-panel .wrapper textarea {
+        height: 50vmin;
+    }
 }

@@ -1,3 +1,11 @@
-.euclidean-algorithm-panel .wrapper textarea {
-    height: 44.8vh;
+@media (max-width: 620px ) {
+    .euclidean-algorithm-panel .wrapper textarea {
+        height: 26.5vmin;
+    }
+}
+
+@media (min-width: 620px ) {
+    .euclidean-algorithm-panel .wrapper textarea {
+        height: 44.8vmin;
+    }
 }

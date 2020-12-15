@@ -1,3 +1,11 @@
-.modular-equations-algorithm-panel .wrapper textarea {
-    height: 39.95vh;
+@media (max-width: 620px ) {
+    .modular-equations-algorithm-panel .wrapper textarea {
+        height: 37vmin;
+    }
+}
+
+@media (min-width: 620px ) {
+    .modular-equations-algorithm-panel .wrapper textarea {
+        height: 39.95vmin;
+    }
 }
