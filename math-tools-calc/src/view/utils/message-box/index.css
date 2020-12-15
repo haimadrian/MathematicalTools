@@ -1,0 +1,42 @@
+.message-box {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.info {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: left;
+    background: rgb(150, 255, 150);
+}
+
+.warning {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: left;
+    background: rgb(255, 255, 150);
+}
+
+.error {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: left;
+    background: rgb(255, 100, 100);
+}
+
+.message-box-title {
+    display: inline-block;
+    padding-right: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.message-box-content {
+    display: inline-block;
+    font-size: 14px;
+    align-content: center;
+    font-weight: 400;
+}
