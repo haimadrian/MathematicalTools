@@ -5,6 +5,7 @@ import MessageBox, {
 import { solveEquation, solveEquations } from '../../../model/actions/modular-equations';
 import './index.css';
 
+const DEFAULT_EQUATION = 'x \u2261 b (mod n)';
 /**
  * A class responsible for Modular Equations solving
  */
@@ -12,7 +13,7 @@ export default class ModularEquationsForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            equations: ['ax \u2261 b (mod n)', 'x \u2261 b (mod n)', 'x \u2261 b (mod n)'], // Array of strings, containing equations
+            equations: ['ax \u2261 b (mod n)', DEFAULT_EQUATION, DEFAULT_EQUATION], // Array of strings, containing equations
             value: '', // The result value. (x)
             messageType: '', // error
             message: '',
@@ -68,7 +69,7 @@ export default class ModularEquationsForm extends React.Component {
         let equations = this.state.equations;
         console.log('Input: equations=', equations, ', action=', target.id);
 
-        if (equations.length === 1) {
+        if ((equations.length === 1) || (equations[1].length === 0) || (equations[1] === DEFAULT_EQUATION)) {
             let result = solveEquation(equations[0]);
             console.log(result)
 
@@ -111,7 +112,7 @@ export default class ModularEquationsForm extends React.Component {
      * Adds an equation to the form.
      */
     addEquation() {
-        this.setState(prevState => ({ equations: [...prevState.equations, 'x \u2261 b (mod n)']}))
+        this.setState(prevState => ({ equations: [...prevState.equations, DEFAULT_EQUATION]}))
     }
 
     /**
@@ -139,7 +140,7 @@ export default class ModularEquationsForm extends React.Component {
                             this.state.equations.map((equation, i) =>
                                 <label className="actions">
                                     <div key={i}>
-                                        <input type="text" value={equation||'x \u2261 b (mod n)'} onChange={this.handleInputChange.bind(this, i)} />
+                                        <input type="text" value={equation||DEFAULT_EQUATION} onChange={this.handleInputChange.bind(this, i)} />
                                     </div>
                                     <div className="edit-button" id="remove" onClick={this.removeEquation.bind(this, i)}>-</div>
                                     {   // In case there is a message to display, pop it up
