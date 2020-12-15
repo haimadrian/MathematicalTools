@@ -19,7 +19,7 @@
     text-align: left;
     height: 9vmin;
     pointer-events: none;
-    margin: 0 20px 0 0;
+    margin: 0 5vmin 0 0;
     padding: 0;
 }
 
@@ -28,22 +28,23 @@
     flex-direction: row;
     text-align: left;
     vertical-align: center;
-    font-size: 36px;
+    font-size: calc(5vmin + 2px);
     font-style: oblique;
     font-weight: bold;
     border-radius: 0;
     box-sizing: border-box;
-    top:0;
-    width:100%;
-    height: 10%;
-    transition:0.5s;
+    top: 0;
+    width: 100%;
+    height: 10vmin;
+    transition: 0.5s;
     padding-top: 1vmin;
     z-index: 0;
-    position:relative;
+    position: relative;
 }
+
 .App-header .header-title {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 1vmin;
 }
 
 @media (max-width: 620px ) {
@@ -59,16 +60,16 @@
         box-sizing: border-box;
         border-radius: 0;
         pointer-events: auto;
-        box-shadow: 0 0 10px 0 rgba(97, 218, 251, 0.7);
+        box-shadow: 0 0 2vmin 0 rgba(97, 218, 251, 0.7);
         z-index: 1;
-        position:relative;
+        position: relative;
     }
 
     .react-tabs__tab-list {
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 80px;
+        height: 100px;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -79,7 +80,12 @@
 
     .react-tabs__tab {
         list-style: none;
-        padding: 5px 5px;
+        padding-left: 1vmin;
+        padding-top: 0;
+        margin-top: 0;
+        justify-content: center;
+        justify-items: center;
+        vertical-align: top;
         cursor: pointer;
         color: #bbb;
     }
@@ -89,12 +95,15 @@
         border-color: #1c1d1f;
         border-top: 4px solid #61dafb;
         color: white;
+        justify-content: center;
+        justify-items: center;
+        vertical-align: center;
     }
 
     .react-tabs__tab-panel {
         display: none;
         background: #1c1d1f;
-        margin-top: 10px;
+        margin-top: 2vmin;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
@@ -105,9 +114,9 @@
     }
 
     .execute-button {
-        padding: 5px 0 5px 0;
-        margin: 10px 5px 0 5px;
-        border-radius: 5px;
+        padding: 1vmin 0 1vmin 0;
+        margin: 2vmin 1vmin 0 1vmin;
+        border-radius: 1vmin;
         min-width: 120px;
         text-align: center;
         opacity: 0.85;
@@ -117,7 +126,7 @@
         -ms-user-select: none;
         -webkit-user-select: none;
         background: rgb(97, 218, 251);
-        font-size: 18px;
+        font-size: calc(2vmin + 6px);
         font-style: normal;
         font-variant: full-width;
         font-weight: 650;
@@ -136,9 +145,9 @@
         box-sizing: border-box;
         border-radius: 0;
         pointer-events: auto;
-        box-shadow: 0 0 10px 0 rgba(97, 218, 251, 0.7);
+        box-shadow: 0 0 2vmin 0 rgba(97, 218, 251, 0.7);
         z-index: 1;
-        position:relative;
+        position: relative;
     }
 
     .react-tabs__tab-list {
@@ -150,11 +159,12 @@
         color: white;
         background: #3c3e43;
         text-align: center;
+        font-size: calc(2vmin + 3px);
     }
 
     .react-tabs__tab {
         list-style: none;
-        padding: 5px 5px;
+        padding-left: 1vmin;
         cursor: pointer;
         color: #bbb;
     }
@@ -169,7 +179,7 @@
     .react-tabs__tab-panel {
         display: none;
         background: #1c1d1f;
-        margin-left: 10px;
+        margin-left: 2vmin;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
@@ -180,9 +190,9 @@
     }
 
     .execute-button {
-        padding: 5px 0 5px 0;
-        margin: 10px 5px 0 5px;
-        border-radius: 5px;
+        padding: 1vmin 0 1vmin 0;
+        margin: 2vmin 1vmin 0 1vmin;
+        border-radius: 1vmin;
         min-width: 200px;
         text-align: center;
         opacity: 0.85;
@@ -192,7 +202,7 @@
         -ms-user-select: none;
         -webkit-user-select: none;
         background: rgb(97, 218, 251);
-        font-size: 18px;
+        font-size: calc(2vmin + 6px);
         font-style: normal;
         font-variant: full-width;
         font-weight: 650;
@@ -200,11 +210,11 @@
 }
 
 .copyright {
-    font-size: calc(2px + 2vmin);
+    font-size: calc(4px + 2vmin);
     position: sticky;
-    margin-right: 5px;
-    margin-top: 10px;
-    padding-top: 10px;
+    margin-right: 1vmin;
+    margin-top: 2vmin;
+    padding-top: 2vmin;
     font-weight: 200;
     color: #bbb;
 }
@@ -212,59 +222,61 @@
 
 .wrapper label {
     text-align: left;
-    padding: 10px 5px 0 5px;
+    padding: 2vmin 1vmin 0 1vmin;
     min-width: 250px;
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: calc(2vmin + 3px);
     font-style: normal;
     font-variant: full-width;
-    font-weight: 650;
+    font-weight: bold;
 }
 
 .wrapper .content {
     text-align: left;
-    padding: 5px 5px 0 5px;
+    padding: 1vmin 1vmin 0 1vmin;
     min-width: 250px;
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: calc(2vmin + 2px);
     font-style: normal;
     font-variant: full-width;
-    font-weight: 450;
+    font-weight: 500;
     color: #bbb;
 }
 
 .wrapper .actions {
-    padding: 5px 5px 5px 5px;
-    margin: 5px 5px 0 0;
+    padding: 1vmin 1vmin 1vmin 1vmin;
+    margin: 1vmin 1vmin 0 0;
     min-width: 250px;
     display: flex;
     justify-content: flex-start;
-    font-size: 16px;
+    font-size: calc(2vmin + 6px);
     font-style: normal;
     font-variant: full-width;
-    font-weight: 650;
+    font-weight: bold;
 }
 
 .edit-button {
-     padding: 0 0 0 0;
-     margin: 0 2px 0 2px;
-     border-radius: 5px;
-     min-width: 30px;
-     text-align: center;
-     opacity: 0.85;
-     cursor: pointer;
-     user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     -webkit-user-select: none;
-     background: rgb(97, 218, 251);
-     font-size: 18px;
-     font-style: normal;
-     font-variant: full-width;
-     font-weight: 800;
- }
+    padding-top: 2px;
+    margin: 0 2px 0 2px;
+    border-radius: 1vmin;
+    min-width: 30px;
+    text-align: center;
+    vertical-align: center;
+    opacity: 0.85;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    background: rgb(97, 218, 251);
+    font-size: calc(2vmin + 6px);
+    font-style: normal;
+    font-variant: full-width;
+    font-weight: bold;
+}
+
 .edit-button:hover {
     opacity: 1;
 }
@@ -274,8 +286,8 @@
 }
 
 .title {
-    margin-top: 5px;
-    font-size: 30px;
+    margin-top: 1vmin;
+    font-size: calc(4vmin + 2px);
     font-weight: 500;
     text-align: center;
 }
@@ -293,11 +305,12 @@
     background-color: transparent;
     border-bottom: 2px solid rgb(97, 218, 251);
     outline: none;
-    padding: 5px;
+    padding-left: 1vmin;
     text-decoration: none;
     cursor: default;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 1vmin;
     color: #bbb;
+    font-size: calc(2vmin + 3px);
 }
 
 .wrapper textarea {
@@ -305,11 +318,11 @@
     background-color: transparent;
     border-bottom: 3px solid rgb(97, 218, 251);
     outline: none;
-    padding: 5px;
+    padding: 1vmin;
     text-decoration: none;
     cursor: default;
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-    font-size: 14px;
+    font-size: calc(2vmin + 4px);
     font-style: normal;
     font-variant: normal;
     font-weight: 550;
@@ -324,6 +337,6 @@ input[type=number]::-webkit-inner-spin-button {
     width: 40px;
     margin: 0px;
     height: 20px;
-    line-height: 15px;
+    line-height: 11vmin;
     background: rgb(97, 218, 251);
 }
