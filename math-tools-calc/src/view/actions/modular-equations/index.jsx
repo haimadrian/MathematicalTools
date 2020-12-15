@@ -120,9 +120,11 @@ export default class ModularEquationsForm extends React.Component {
      * @param index The row index of equation user selected to remove
      */
     removeEquation(index) {
-        let equations = [...this.state.equations];
-        equations.splice(index,1);
-        this.setState({ equations: equations });
+        if (this.state.equations.length > 1) {
+            let equations = [...this.state.equations];
+            equations.splice(index, 1);
+            this.setState({equations: equations});
+        }
     }
 
     render() {

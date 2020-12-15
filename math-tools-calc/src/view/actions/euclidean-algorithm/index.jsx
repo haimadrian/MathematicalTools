@@ -120,9 +120,11 @@ export default class EuclideanAlgorithmForm extends React.Component {
                                    onKeyDown={(e) => {if (e.key === 'Enter') {this.handleSubmit()}}}
                             />
                         </label>
-                        <div className="execute-button" onClick={this.handleSubmit}>
-                            Go
-                        </div>
+                        <label className="actions">
+                            <div className="execute-button" onClick={this.handleSubmit}>
+                                Go
+                            </div>
+                        </label>
                         <label>Output:</label>
                         <textarea className="textarea" value={this.state.calculationSteps} readOnly />
                         {   // In case there is a message to display, pop it up

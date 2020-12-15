@@ -1,58 +1,224 @@
 .App {
-  text-align: left;
+    text-align: left;
+    position: absolute;
+    font-family: sans-serif;
+    background: #282c34;
+    color: #bbb;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    pointer-events: none;
+    border-radius: 0;
 }
 
 .App-logo {
-  height: 30vmin;
-  pointer-events: none;
-  position: absolute;
-  margin: 45px 0 0 50px
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    height: 10vmin;
+    pointer-events: none;
+    margin: 0 20px 0 0;
+    padding: 0;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    font-size: 36px;
+    font-style: oblique;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-radius: 0;
 }
 
-.App-body {
-  background-color: #282c34;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(6px + 2vmin);
-  color: white;
+.react-tabs {
+    display: flex;
+    color: white;
+    background: #1c1d1f;
+    margin: 0;
+    padding: 0;
+    height: 88%;
+    border-radius: 0;
+    pointer-events: auto;
+    box-shadow: 0 0 10px 0 rgba(97, 218, 251, 0.7);
 }
 
-.App-link {
-  color: #61dafb;
-  padding: 5px;
+.react-tabs__tab-list {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: #3c3e43;
+}
+
+.react-tabs__tab {
+    list-style: none;
+    padding: 12px 6px;
+    cursor: pointer;
+    color: #bbb;
+}
+
+.react-tabs__tab--selected {
+    background: #1c1d1f;
+    border-color: #1c1d1f;
+    border-left: 4px solid #61dafb;
+    color: white;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+    background: #1c1d1f;
+    margin-left: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
 }
 
 .copyright {
-  font-size: calc(2px + 2vmin);
-  vertical-align: bottom;
-  display: inline-block;
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  font-weight: 200;
+    font-size: calc(2px + 2vmin);
+    vertical-align: bottom;
+    display: inline-block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-weight: 200;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.wrapper label {
+    padding: 10px 5px 0 5px;
+    min-width: 250px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: full-width;
+    font-weight: 650;
+}
+
+.wrapper .content {
+    padding: 5px 5px 0 5px;
+    min-width: 250px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: full-width;
+    font-weight: 450;
+    color: #bbb;
+}
+
+.wrapper .actions {
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 0 0;
+    min-width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: full-width;
+    font-weight: 650;
+}
+
+.execute-button {
+    padding: 5px 0 5px 0;
+    margin: 10px 5px 0 5px;
+    border-radius: 5px;
+    min-width: 200px;
+    text-align: center;
+    opacity: 0.85;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    background: rgb(97, 218, 251);
+    font-size: 18px;
+    font-style: normal;
+    font-variant: full-width;
+    font-weight: 650;
+}
+
+.edit-button {
+     padding: 0 0 0 0;
+     margin: 0 2px 0 2px;
+     border-radius: 5px;
+     min-width: 30px;
+     text-align: center;
+     opacity: 0.85;
+     cursor: pointer;
+     user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     -webkit-user-select: none;
+     background: rgb(97, 218, 251);
+     font-size: 18px;
+     font-style: normal;
+     font-variant: full-width;
+     font-weight: 800;
+ }
+.edit-button:hover {
+    opacity: 1;
+}
+
+.wrapper .execute-button:hover {
+    opacity: 1;
+}
+
+.title {
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.wrapper input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(97, 218, 251);
+    outline: none;
+    padding: 5px;
+    text-decoration: none;
+    cursor: default;
+    margin: 0 0 0 5px;
+    color: #bbb;
+}
+
+.wrapper textarea {
+    width: 98%;
+    background-color: transparent;
+    border-bottom: 3px solid rgb(97, 218, 251);
+    outline: none;
+    padding: 5px;
+    text-decoration: none;
+    cursor: default;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 550;
+    line-height: 16px;
+    white-space: pre;
+    overflow: auto;
+    color: #bbb;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    cursor: default;
+    width: 40px;
+    margin: 0px;
+    height: 20px;
+    line-height: 15px;
+    background: rgb(97, 218, 251);
 }
