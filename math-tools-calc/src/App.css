@@ -326,7 +326,7 @@
     font-style: normal;
     font-variant: normal;
     font-weight: 550;
-    line-height: 16px;
+    line-height: calc(2vmin + 6px);
     white-space: pre;
     overflow: auto;
     color: #bbb;
@@ -335,7 +335,7 @@
 input[type=number]::-webkit-inner-spin-button {
     cursor: default;
     width: 40px;
-    margin: 0px;
+    margin: 0;
     height: 20px;
     line-height: 11vmin;
     background: rgb(97, 218, 251);
