@@ -4,6 +4,7 @@ import EuclideanAlgorithmForm from './view/actions/euclidean-algorithm/index';
 import GcdLcmForm from './view/actions/gcd-lcm-prime-factors/index';
 import EulerForm from './view/actions/euler/index';
 import ModularEquationsForm from './view/actions/modular-equations/index';
+import RecursionForm from './view/actions/recursion/index';
 
 import './App.css';
 
@@ -28,6 +29,9 @@ function App() {
                     <Tab>
                         <p>Modular Equations</p>
                     </Tab>
+                    <Tab>
+                        <p>Recursion</p>
+                    </Tab>
                 </TabList>
 
                 <TabPanel>
@@ -51,6 +55,12 @@ function App() {
                 <TabPanel>
                     <div className="panel-content">
                         <ModularEquationsForm/>
+                        <label className="copyright"><br/>© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="panel-content">
+                        <RecursionForm/>
                         <label className="copyright"><br/>© All Rights ... wtf lol © RickShvetz © 2020-2021 ©</label>
                     </div>
                 </TabPanel>
