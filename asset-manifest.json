@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/MathematicalTools/static/css/main.53a49bc3.chunk.css",
-    "main.js": "/MathematicalTools/static/js/main.ab1d7960.chunk.js",
-    "main.js.map": "/MathematicalTools/static/js/main.ab1d7960.chunk.js.map",
-    "runtime-main.js": "/MathematicalTools/static/js/runtime-main.5f4cb0a8.js",
-    "runtime-main.js.map": "/MathematicalTools/static/js/runtime-main.5f4cb0a8.js.map",
-    "static/js/2.d07e6845.chunk.js": "/MathematicalTools/static/js/2.d07e6845.chunk.js",
-    "static/js/2.d07e6845.chunk.js.map": "/MathematicalTools/static/js/2.d07e6845.chunk.js.map",
-    "static/js/3.96155c18.chunk.js": "/MathematicalTools/static/js/3.96155c18.chunk.js",
-    "static/js/3.96155c18.chunk.js.map": "/MathematicalTools/static/js/3.96155c18.chunk.js.map",
+    "main.css": "/MathematicalTools/static/css/main.bae53e47.chunk.css",
+    "main.js": "/MathematicalTools/static/js/main.87bd08ad.chunk.js",
+    "main.js.map": "/MathematicalTools/static/js/main.87bd08ad.chunk.js.map",
+    "runtime-main.js": "/MathematicalTools/static/js/runtime-main.a155b113.js",
+    "runtime-main.js.map": "/MathematicalTools/static/js/runtime-main.a155b113.js.map",
+    "static/js/2.5ae960ce.chunk.js": "/MathematicalTools/static/js/2.5ae960ce.chunk.js",
+    "static/js/2.5ae960ce.chunk.js.map": "/MathematicalTools/static/js/2.5ae960ce.chunk.js.map",
+    "static/js/3.a01dd1f8.chunk.js": "/MathematicalTools/static/js/3.a01dd1f8.chunk.js",
+    "static/js/3.a01dd1f8.chunk.js.map": "/MathematicalTools/static/js/3.a01dd1f8.chunk.js.map",
     "index.html": "/MathematicalTools/index.html",
-    "static/css/main.53a49bc3.chunk.css.map": "/MathematicalTools/static/css/main.53a49bc3.chunk.css.map",
-    "static/js/2.d07e6845.chunk.js.LICENSE.txt": "/MathematicalTools/static/js/2.d07e6845.chunk.js.LICENSE.txt"
+    "static/css/main.bae53e47.chunk.css.map": "/MathematicalTools/static/css/main.bae53e47.chunk.css.map",
+    "static/js/2.5ae960ce.chunk.js.LICENSE.txt": "/MathematicalTools/static/js/2.5ae960ce.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5f4cb0a8.js",
-    "static/js/2.d07e6845.chunk.js",
-    "static/css/main.53a49bc3.chunk.css",
-    "static/js/main.ab1d7960.chunk.js"
+    "static/js/runtime-main.a155b113.js",
+    "static/js/2.5ae960ce.chunk.js",
+    "static/css/main.bae53e47.chunk.css",
+    "static/js/main.87bd08ad.chunk.js"
   ]
 }
