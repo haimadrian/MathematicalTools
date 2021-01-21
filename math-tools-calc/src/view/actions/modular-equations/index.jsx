@@ -5,7 +5,7 @@ import MessageBox, {
 import { solveEquation, solveEquations } from '../../../model/actions/modular-equations';
 import './index.css';
 
-const DEFAULT_EQUATION = 'x \u2261 b (mod n)';
+const DEFAULT_EQUATION = '𝑥 \u2261 b (𝑚𝑜𝑑 n)';
 /**
  * A class responsible for Modular Equations solving
  */
@@ -13,7 +13,7 @@ export default class ModularEquationsForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            equations: ['ax \u2261 b (mod n)', DEFAULT_EQUATION, DEFAULT_EQUATION], // Array of strings, containing equations
+            equations: ['a𝑥 \u2261 b (𝑚𝑜𝑑 n)', DEFAULT_EQUATION, DEFAULT_EQUATION], // Array of strings, containing equations
             value: '', // The result value. (x)
             messageType: '', // error
             message: '',
@@ -78,11 +78,11 @@ export default class ModularEquationsForm extends React.Component {
             } else {
                 let answer;
                 if (result.values[0] === -1) {
-                    answer = 'No answer.';
+                    answer = 'No answer.\n';
                 } else {
                     answer = 'Answer:\n';
                     for (let i = 0; i < result.values.length; i++) {
-                        answer += 'x' + i + ' \u2261 ' + result.values[i] + ' (mod ' + result.n + ')\n';
+                        answer += '𝑥' + i + ' \u2261 ' + result.values[i] + ' (𝑚𝑜𝑑 ' + result.n + ')\n';
                     }
                 }
 
@@ -98,7 +98,7 @@ export default class ModularEquationsForm extends React.Component {
             if (typeof result === 'string' || result instanceof String) {
                 this.showMessageBox(ERROR, result);
             } else {
-                let answer = 'Answer: x \u2261 ' + result.value + ' (mod ' + result.m + '). ';
+                let answer = 'Answer: 𝑥 \u2261 ' + result.value + ' (𝑚𝑜𝑑 ' + result.m + '). ';
 
                 this.setState({
                     value: result.value,
@@ -135,7 +135,7 @@ export default class ModularEquationsForm extends React.Component {
                     <div className="wrapper">
                         <label className="content">
                             Enter an equation for calculating x. You can add as many equations as you need by using the + button<br/>
-                            For example, enter 3x=1(mod6), or 3x≡3(mod6).
+                            For example, enter 3𝑥=1(𝑚𝑜𝑑6), or 3𝑥≡3(𝑚𝑜𝑑6).
                         </label>
                         {
                             // Dynamic rows, to let user add or remove equations

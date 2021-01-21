@@ -9,13 +9,17 @@ function parseEquation(equation) {
     // Look at it as a lower case string, with no spaces, to be able to skip const parts with no exceptions.
     let srcEquation = equation;
     equation = equation.toLowerCase().replaceAll(' ', '');
+
+    // In order to support copying the equation from word/pdf, replace potential characters of word with input ones.
+    equation = equation.replaceAll('𝑥', 'x').replaceAll('𝑋', 'x').replaceAll('𝑚', 'm').replaceAll('𝑜', 'o').replaceAll('𝑑', 'd')
+
     if (equation.length === 0) {
         return 'Nothing to solve. Equation was empty.'
     }
 
     let indexOfX = equation.indexOf('x');
     if (indexOfX < 0) {
-        return 'Illegal equation. X could not be detected. Was: ' + srcEquation;
+        return 'Illegal equation. 𝑥 could not be detected. Was: ' + srcEquation;
     }
 
     let a = indexOfX === 0 ? 1 : Number(equation.substr(0, indexOfX));
@@ -45,7 +49,7 @@ function parseEquation(equation) {
 
     let c = equation.charAt(indexOfMod + 1);
     if (c < '0' || c > '9') {
-        return 'Illegal equation. mod (divisor) was empty. Was: ' + srcEquation;
+        return 'Illegal equation. 𝑚𝑜𝑑 (divisor) was empty. Was: ' + srcEquation;
     }
 
     let indexOfEndParentheses = equation.indexOf(')');
@@ -85,8 +89,8 @@ export const solveEquation = (equation) => {
         let b = equationItems.b;
         let n = equationItems.n;
 
-        let calculationSteps = (a === 1 ? '' : a) + 'x\u2261' + b + '(mod ' + n + ')';
-        calculationSteps += ',\t\tax\u2261b(mod n):  a=' + a + ',  b=' + b + ',  n=' + n + '\n';
+        let calculationSteps = (a === 1 ? '' : a) + '𝑥\u2261' + b + '(𝑚𝑜𝑑 ' + n + ')';
+        calculationSteps += ',\t\ta𝑥\u2261b(𝑚𝑜𝑑 n):  a=' + a + ',  b=' + b + ',  n=' + n + '\n';
         let gcdRes = euclideanAlgorithm(a, n, 'a', 'n', 'q', 't');
         let d = gcdRes.value;
         let q = gcdRes.u;
@@ -108,14 +112,14 @@ export const solveEquation = (equation) => {
 
         calculationSteps += '\ngcd(a,n)|b \u21D2 ' + d + '|' + b + ' \u21D2 q=' + q;
         let x0 = (q * b / d) % n;
-        calculationSteps += '\nx0 \u2261 qb/d(mod n) \u2261 ' + q + '*' + b + '/' + d + '(mod ' + n + ') \u2261 ' +
-            (q * b / d) + '(mod ' + n + ')';
+        calculationSteps += '\n𝑥0 \u2261 qb/d(𝑚𝑜𝑑 n) \u2261 ' + q + '*' + b + '/' + d + '(𝑚𝑜𝑑 ' + n + ') \u2261 ' +
+            (q * b / d) + '(𝑚𝑜𝑑 ' + n + ')';
         if ((q * b / d) !== x0) {
-            calculationSteps += ' \u2261 ' + x0 + '(mod ' + n + ')';
+            calculationSteps += ' \u2261 ' + x0 + '(𝑚𝑜𝑑 ' + n + ')';
         }
         if (x0 < 0) {
             while (x0 < 0) x0 += n;
-            calculationSteps += ' \u2261 ' + x0 + '(mod ' + n + ')';
+            calculationSteps += ' \u2261 ' + x0 + '(𝑚𝑜𝑑 ' + n + ')';
         }
         calculationSteps += '\n';
 
@@ -130,16 +134,16 @@ export const solveEquation = (equation) => {
             for (let k = 0; k < d; k++) {
                 let xkBeforeMod = x0 + (k * n / d);
                 let xk = xkBeforeMod % n;
-                calculationSteps += '\nx' + k + ' \u2261 (x0 + kn/d)(mod n) \u2261 (' + x0 + '+(' + k + '*' + n + '/' + d + '))(mod ' + n + ') \u2261 ' +
-                    xkBeforeMod + '(mod ' + n + ')';
+                calculationSteps += '\n𝑥' + k + ' \u2261 (𝑥0 + kn/d)(𝑚𝑜𝑑 n) \u2261 (' + x0 + '+(' + k + '*' + n + '/' + d + '))(𝑚𝑜𝑑 ' + n + ') \u2261 ' +
+                    xkBeforeMod + '(𝑚𝑜𝑑 ' + n + ')';
 
                 // Now append xk after the mod, only in case it differs from what we have already appended.
                 if (xkBeforeMod !== xk) {
-                    calculationSteps += ' \u2261 ' + xk + '(mod ' + n + ')';
+                    calculationSteps += ' \u2261 ' + xk + '(𝑚𝑜𝑑 ' + n + ')';
                 }
                 if (xk < 0) {
                     while (xk < 0) xk += n;
-                    calculationSteps += ' \u2261 ' + x0 + '(mod ' + n + ')';
+                    calculationSteps += ' \u2261 ' + x0 + '(𝑚𝑜𝑑 ' + n + ')';
                 }
 
                 values.push(xk);
@@ -183,7 +187,7 @@ export const solveEquations = (equations) => {
                 b: fixedEquation.values[0],
                 n: fixedEquation.n
             };
-            calculationSteps += currEquation + '  has been solved. Fixed equation is: x\u2261' + currEquationItems.b + '(mod ' + currEquationItems.n + ')\n';
+            calculationSteps += currEquation + '  has been solved. Fixed equation is: 𝑥\u2261' + currEquationItems.b + '(𝑚𝑜𝑑 ' + currEquationItems.n + ')\n';
             calculationSteps += 'Explanation:\n\t' + fixedEquation.calculationSteps.replaceAll('\n', '\n\t').replaceAll('\n\t\n\t', '\n\n\t') + '\n';
         }
 
@@ -198,7 +202,7 @@ export const solveEquations = (equations) => {
     calculationSteps += 'Solving:';
     for (let i = 0; i < equationItems.length; i++) {
         let currEquationItems = equationItems[i];
-        calculationSteps += '\nx \u2261 ' + currEquationItems.b + ' (mod ' + currEquationItems.n + ')';
+        calculationSteps += '\n𝑥 \u2261 ' + currEquationItems.b + ' (𝑚𝑜𝑑 ' + currEquationItems.n + ')';
 
         m *= currEquationItems.n;
         if (littleMExplanation.length !== 0) {
@@ -227,11 +231,11 @@ export const solveEquations = (equations) => {
     }
 
     // Create new equations, based on MiXi = 1(mod mi)
-    calculationSteps += '\n\n' + littleAExplanation + '\n' + littleMExplanation + bigMExplanation + '\n\nSolving Xi now. (Mixi \u2261 1 (mod mi))\n';
+    calculationSteps += '\n\n' + littleAExplanation + '\n' + littleMExplanation + bigMExplanation + '\n\nSolving 𝑥i now. (Mi𝑥i \u2261 1 (𝑚𝑜𝑑 mi))\n';
     let xIsEquations = [];
     for (let i = 0; i < equationItems.length; i++) {
         let currEquationItems = equationItems[i];
-        let newEquation = bigMs[i] + 'x \u2261 1 (mod ' + currEquationItems.n + ')';
+        let newEquation = bigMs[i] + '𝑥 \u2261 1 (𝑚𝑜𝑑 ' + currEquationItems.n + ')';
         xIsEquations.push(newEquation);
         calculationSteps += newEquation + '\n';
     }
@@ -243,12 +247,12 @@ export const solveEquations = (equations) => {
         let currEquation = xIsEquations[i];
         let currEquationItems = solveEquation(currEquation);
         xIsValues.push(currEquationItems.values[0]);
-        calculationSteps += currEquation + ' \u21D2 x' + (i+1) + '=' + currEquationItems.values[0] +
+        calculationSteps += currEquation + ' \u21D2 𝑥' + (i+1) + '=' + currEquationItems.values[0] +
             '\nExplanation:\n\t' + currEquationItems.calculationSteps.replaceAll('\n', '\n\t').replaceAll('\n\t\n\t', '\n\n\t') + '\n';
     }
 
     // Now calculate x.
-    calculationSteps += '\nx \u2261 ('
+    calculationSteps += '\n𝑥 \u2261 ('
     calculationStepsHelper = '';
     let calculationStepsHelper2 = '';
     let x = 0;
@@ -262,16 +266,16 @@ export const solveEquations = (equations) => {
             calculationStepsHelper += ' + ';
             calculationStepsHelper2 += ' + ';
         }
-        calculationStepsHelper += 'a' + num + '*M' + num + '*x' + num;
+        calculationStepsHelper += 'a' + num + '*M' + num + '*𝑥' + num;
         calculationStepsHelper2 += currAi + '*' + currMi + '*' + currXi;
 
         x += (currAi * currMi * currXi);
     }
 
-    calculationSteps += calculationStepsHelper + ')(mod m)\nx \u2261 (' + calculationStepsHelper2 + ')(mod ' + m + ') \u2261 ' +
-        x + '(mod ' + m + ') \u2261 ';
+    calculationSteps += calculationStepsHelper + ')(𝑚𝑜𝑑 m)\n𝑥 \u2261 (' + calculationStepsHelper2 + ')(𝑚𝑜𝑑 ' + m + ') \u2261 ' +
+        x + '(𝑚𝑜𝑑 ' + m + ') \u2261 ';
     x = (x % m);
-    calculationSteps += x + '(mod ' + m + ')';
+    calculationSteps += x + '(𝑚𝑜𝑑 ' + m + ')';
 
     return {
         value: x,
