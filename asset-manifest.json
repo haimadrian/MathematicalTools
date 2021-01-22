@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MathematicalTools/static/css/main.bae53e47.chunk.css",
-    "main.js": "/MathematicalTools/static/js/main.377a4511.chunk.js",
-    "main.js.map": "/MathematicalTools/static/js/main.377a4511.chunk.js.map",
+    "main.js": "/MathematicalTools/static/js/main.fa33db34.chunk.js",
+    "main.js.map": "/MathematicalTools/static/js/main.fa33db34.chunk.js.map",
     "runtime-main.js": "/MathematicalTools/static/js/runtime-main.a155b113.js",
     "runtime-main.js.map": "/MathematicalTools/static/js/runtime-main.a155b113.js.map",
     "static/js/2.5ae960ce.chunk.js": "/MathematicalTools/static/js/2.5ae960ce.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a155b113.js",
     "static/js/2.5ae960ce.chunk.js",
     "static/css/main.bae53e47.chunk.css",
-    "static/js/main.377a4511.chunk.js"
+    "static/js/main.fa33db34.chunk.js"
   ]
 }
