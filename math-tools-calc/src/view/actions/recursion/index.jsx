@@ -14,8 +14,7 @@ export default class RecursionForm extends React.Component {
         super(props);
         this.state = {
             n: '', // n, of f(n) - The length of strings to check
-            contains: false, // Whether we check if a string contains, or not, some value
-            value: '', // The value to check if it is contained in a string or not
+            values: [''], // The values to check if they are contained in a string or not
             count: 0, // How many occurrences found
             alphabet: ['0', '1', '2'], // The alphabet to build strings from.
             messageType: '', // error
@@ -56,12 +55,9 @@ export default class RecursionForm extends React.Component {
         const target = event.target;
         const name = target.name;
         let value = target.value;
-        if (value === 'contains') {
-            value = true;
-        } else if (value === 'not contains') {
-            value = false;
-        } else if (typeof value === 'string' || value instanceof String) {
-            value = value.split(',');
+        if (typeof value === 'string' || value instanceof String) {
+            // Remove all whitespace characters
+            value = value.replaceAll(/\s/g, '').split(',');
         }
 
         this.setState({
@@ -79,7 +75,7 @@ export default class RecursionForm extends React.Component {
         let n = Number(this.state.n);
         console.log('Input: n=', n, ', action=', target.id);
 
-        let result = recursiveFunc(n, this.state.alphabet, this.state.contains, this.state.value);
+        let result = recursiveFunc(n, this.state.alphabet, this.state.values);
         console.log(result)
 
         if (typeof result === 'string' || result instanceof String) {
@@ -101,8 +97,10 @@ export default class RecursionForm extends React.Component {
                         <label className="content">
                             Enter n for calculating f(n). n tells the length of a string. (depth of tree)<br/>
                             Fill in the alphabet, as a comma separated string. e.g. 0,1,2 or a,b,c etc.<br/>
-                            Select whether you'd like to check if a string contains some value, or not contains it.<br/>
-                            Fill in the value you want to check if it is contained in a string or not.
+                            Fill in the values you want to check if they are contained in a string or not.<br/>
+                            Note that values is a comma separated string, e.g. 00,!01 where '!' stands for "not contains", so you can search for occurrences
+                            that contain 00, but not contain 01.<br/>
+                            Another example for values: !00,!11 to look for occurrences that do contain 00 or 11.
                         </label>
                         <label>
                             Alphabet:
@@ -114,19 +112,9 @@ export default class RecursionForm extends React.Component {
                             />
                         </label>
                         <label>
-                            Contains or not:
-                            <select name="contains"
-                                    value={this.state.contains ? 'contains' : 'not contains'}
-                                    onChange={this.handleInputChange}>
-                                {['contains', 'not contains'].map((option) => (
-                                    <option key={option} value={option}>{option}</option>
-                                ))}
-                            </select>
-                        </label>
-                        <label>
-                            Value:
-                            <input name="value"
-                                   value={this.state.value}
+                            Values:
+                            <input name="values"
+                                   value={this.state.values.join(',')}
                                    onChange={this.handleInputChange}
                                    required
                                    onKeyDown={(e) => {if (e.key === 'Enter') {this.handleSubmit(e)}}}

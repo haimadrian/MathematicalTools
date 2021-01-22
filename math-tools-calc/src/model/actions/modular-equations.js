@@ -8,13 +8,15 @@ import {euclideanAlgorithm} from './euclidean-algorithm'
 function parseEquation(equation) {
     // Look at it as a lower case string, with no spaces, to be able to skip const parts with no exceptions.
     let srcEquation = equation;
-    equation = equation.toLowerCase().replaceAll(' ', '');
 
     // In order to support copying the equation from word/pdf, replace potential characters of word with input ones.
-    equation = equation.replaceAll('𝑥', 'x').replaceAll('𝑋', 'x').replaceAll('𝑚', 'm').replaceAll('𝑜', 'o').replaceAll('𝑑', 'd')
+    equation = equation.replaceAll('𝑥', 'x').replaceAll('𝑋', 'x').replaceAll('𝑚', 'm').replaceAll('𝑜', 'o').replaceAll('𝑑', 'd');
+
+    // Make it easy by using lowercase letters only, without whitespace characters
+    equation = equation.toLowerCase().replaceAll(/\s/g, '');
 
     if (equation.length === 0) {
-        return 'Nothing to solve. Equation was empty.'
+        return 'Nothing to solve. Equation was empty.';
     }
 
     let indexOfX = equation.indexOf('x');
