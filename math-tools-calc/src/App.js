@@ -12,7 +12,7 @@ function App() {
     return (
         <div className="App">
             <div className="App-header">
-                <img src="./logo192.png" className="App-logo" alt="logo"/>
+                <img src="./deadpool.png" className="App-logo" alt="logo"/>
                 <label className='header-title'>Math Tools Calculator</label>
             </div>
             <Tabs>

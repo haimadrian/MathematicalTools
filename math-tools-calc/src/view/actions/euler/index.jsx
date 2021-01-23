@@ -35,7 +35,7 @@ export default class EulerForm extends React.Component {
         this.setState({
             messageType: type,
             message: message,
-            calculationSteps: 'Error: ' + message
+            calculationSteps: 'Oh Fuck: ' + message
         });
 
         setTimeout(() => {
