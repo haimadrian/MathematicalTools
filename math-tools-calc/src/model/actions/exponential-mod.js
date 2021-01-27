@@ -42,31 +42,36 @@ function splittingModulus(base, exponent, modulus, shouldPrintModAtTheBeginning=
         if ((exponent % 2) === 1) {
             exponent--;
             if (exponent > 0) {
-                calculationSteps += "\n \u2261 " + result + " * (" + base + "^" + exponent + "(𝑚𝑜𝑑 " + modulus + ")) * " + base + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
+                calculationSteps += "\n \u2261 " + result + "(𝑚𝑜𝑑 " + modulus + ") * " + base + "(𝑚𝑜𝑑 " + modulus + ") * " + base + "^" + exponent + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
             } else {
-                calculationSteps += "\n \u2261 (" + result + " * " + base + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
+                calculationSteps += "\n \u2261 (" + result + "(𝑚𝑜𝑑 " + modulus + ") * " + base + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
             }
 
-            calculationSteps += "{ " + base + "(𝑚𝑜𝑑 " + modulus + " \u2261 " + (base % modulus) + "(𝑚𝑜𝑑 " + modulus + ") } \u2261 ";
             result = (result * base) % modulus;
         } else {
             exponent -= 2;
             if (exponent > 0) {
-                calculationSteps += "\n \u2261 " + result + " * (" + base + "^" + exponent + "(𝑚𝑜𝑑 " + modulus + ")) * " + base + "^2(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
+                calculationSteps += "\n \u2261 " + result + "(𝑚𝑜𝑑 " + modulus + ") * " + base + "^2(𝑚𝑜𝑑 " + modulus + ") * " + base + "^" + exponent + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
             } else {
-                calculationSteps += "\n \u2261 " + result + " * " + base + "^2(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
+                calculationSteps += "\n \u2261 " + result + "(𝑚𝑜𝑑 " + modulus + ") * " + base + "^2(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
             }
 
-            calculationSteps += "{ " + base + "^2(𝑚𝑜𝑑 " + modulus + ") \u2261 " + ((base * base) % modulus) + "(𝑚𝑜𝑑 " + modulus + ") } \u2261 ";
             result = (result * ((base * base) % modulus)) % modulus;
         }
 
+        if (result === 0) {
+            break;
+        }
+
         if (exponent > 0) {
-            calculationSteps += result + " * " + base + "^" + exponent + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
+            calculationSteps += result + "(𝑚𝑜𝑑 " + modulus + ") * " + base + "^" + exponent + "(𝑚𝑜𝑑 " + modulus + ") \u2261 ";
         }
     }
 
-    calculationSteps += "\n \u2261 " + result + "(𝑚𝑜𝑑 " + modulus + ")";
+    calculationSteps += result + "(𝑚𝑜𝑑 " + modulus + ")\n\n";
+    calculationSteps += "Helper:\n";
+    calculationSteps += "{ " + base + "(𝑚𝑜𝑑 " + modulus + ") \u2261 " + (base % modulus) + "(𝑚𝑜𝑑 " + modulus + ") }\n";
+    calculationSteps += "{ " + base + "^2(𝑚𝑜𝑑 " + modulus + ") \u2261 " + (base * base) + "(𝑚𝑜𝑑 " + modulus + ") \u2261 " + ((base * base) % modulus) + "(𝑚𝑜𝑑 " + modulus + ") }";
     return {result, calculationSteps};
 }
 
@@ -131,10 +136,10 @@ export const exponentialModulus = (base, exponent, modulus) => {
                 calculationSteps += "base and modulus are co-prime numbers, and modulus is ";
 
                 if (isPrime(modulus)) {
-                    calculationSteps += "a prime number, using Fermat's little theorem. b^(m-1) \u2261 1(𝑚𝑜𝑑 m)\n";
+                    calculationSteps += "a prime number. \u21D2 Using Fermat's little theorem. b^(m-1) \u2261 1(𝑚𝑜𝑑 m)\n\n";
                     theoremExponent = modulus - 1;
                 } else {
-                    calculationSteps += "not a prime number, using Euler's theorem. b^\u03C6(m) \u2261 1(𝑚𝑜𝑑 m)\n";
+                    calculationSteps += "not a prime number. \u21D2 Using Euler's theorem. b^\u03C6(m) \u2261 1(𝑚𝑜𝑑 m)\n\n";
                     let eulerFunc = eulerFormula(modulus);
 
                     if (typeof eulerFunc === 'string' || eulerFunc instanceof String) {
@@ -150,8 +155,10 @@ export const exponentialModulus = (base, exponent, modulus) => {
                 result = __ret.result;
                 isSolved = true;
             } else {
-                calculationSteps += "base and modulus are not co-prime numbers. GCD differs from 1. Let's factorize the exponent then.\n";
+                calculationSteps += "base and modulus are not co-prime numbers. GCD differs from 1. \u21D2 Factorize the exponent:\n";
             }
+        } else {
+            calculationSteps += "exponent is lower than modulus-1. \u21D2 Factorize the exponent:\n";
         }
 
         if (!isSolved) {
