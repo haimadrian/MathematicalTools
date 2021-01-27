@@ -34,7 +34,7 @@ function App() {
                         <p>Recursion</p>
                     </Tab>
                     <Tab>
-                        <p>Exponential Mod</p>
+                        <p>Power MOD</p>
                     </Tab>
                 </TabList>
 
