@@ -79,7 +79,7 @@ export const eulerFormula = (n) => {
 
         return {
             value: Math.floor(value),
-            calculationSteps: calculationSteps + '\n' + n + ' = ' + calculationHelper
+            calculationSteps: calculationSteps + ' = ' + Math.floor(value) + '\n' + n + ' = ' + calculationHelper
         };
     } catch (e) {
         return 'Error has occurred while executing eulerFormula(' + n + ') algorithm: ' + e;

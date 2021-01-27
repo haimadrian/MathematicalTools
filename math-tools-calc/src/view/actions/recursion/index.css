@@ -1,11 +1,11 @@
 @media (max-width: 620px ) {
     .recursion-algorithm-panel .wrapper textarea {
-        height: 38vmin;
+        height: 40vmin;
     }
 }
 
 @media (min-width: 620px ) {
     .recursion-algorithm-panel .wrapper textarea {
-        height: 27vmin;
+        height: 29.8vmin;
     }
 }

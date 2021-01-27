@@ -1,0 +1,11 @@
+@media (max-width: 620px ) {
+    .exponential-mod-algorithm-panel .wrapper textarea {
+        height: 34vmin;
+    }
+}
+
+@media (min-width: 620px ) {
+    .exponential-mod-algorithm-panel .wrapper textarea {
+        height: 23vmin;
+    }
+}
