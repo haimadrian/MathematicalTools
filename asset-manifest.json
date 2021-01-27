@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/MathematicalTools/static/css/main.bae53e47.chunk.css",
-    "main.js": "/MathematicalTools/static/js/main.b5aba1b3.chunk.js",
-    "main.js.map": "/MathematicalTools/static/js/main.b5aba1b3.chunk.js.map",
-    "runtime-main.js": "/MathematicalTools/static/js/runtime-main.a155b113.js",
-    "runtime-main.js.map": "/MathematicalTools/static/js/runtime-main.a155b113.js.map",
+    "main.css": "/MathematicalTools/static/css/main.34a613f8.chunk.css",
+    "main.js": "/MathematicalTools/static/js/main.233bde50.chunk.js",
+    "main.js.map": "/MathematicalTools/static/js/main.233bde50.chunk.js.map",
+    "runtime-main.js": "/MathematicalTools/static/js/runtime-main.b4834539.js",
+    "runtime-main.js.map": "/MathematicalTools/static/js/runtime-main.b4834539.js.map",
     "static/js/2.5ae960ce.chunk.js": "/MathematicalTools/static/js/2.5ae960ce.chunk.js",
     "static/js/2.5ae960ce.chunk.js.map": "/MathematicalTools/static/js/2.5ae960ce.chunk.js.map",
-    "static/js/3.a01dd1f8.chunk.js": "/MathematicalTools/static/js/3.a01dd1f8.chunk.js",
-    "static/js/3.a01dd1f8.chunk.js.map": "/MathematicalTools/static/js/3.a01dd1f8.chunk.js.map",
+    "static/js/3.690719b1.chunk.js": "/MathematicalTools/static/js/3.690719b1.chunk.js",
+    "static/js/3.690719b1.chunk.js.map": "/MathematicalTools/static/js/3.690719b1.chunk.js.map",
     "index.html": "/MathematicalTools/index.html",
-    "static/css/main.bae53e47.chunk.css.map": "/MathematicalTools/static/css/main.bae53e47.chunk.css.map",
+    "static/css/main.34a613f8.chunk.css.map": "/MathematicalTools/static/css/main.34a613f8.chunk.css.map",
     "static/js/2.5ae960ce.chunk.js.LICENSE.txt": "/MathematicalTools/static/js/2.5ae960ce.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a155b113.js",
+    "static/js/runtime-main.b4834539.js",
     "static/js/2.5ae960ce.chunk.js",
-    "static/css/main.bae53e47.chunk.css",
-    "static/js/main.b5aba1b3.chunk.js"
+    "static/css/main.34a613f8.chunk.css",
+    "static/js/main.233bde50.chunk.js"
   ]
 }
