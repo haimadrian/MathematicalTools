@@ -34,7 +34,7 @@ function App() {
                         <p>Recursion</p>
                     </Tab>
                     <Tab>
-                        <p>Power MOD</p>
+                        <p>b<sup>e</sup>(𝑚𝑜𝑑 m)</p>
                     </Tab>
                 </TabList>
 
